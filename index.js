@@ -6,6 +6,11 @@ const express = require('express');
 const app = express();
 
 require('./startup/routes')(app);
+app.get('/', async (req, res) => {
+    res.status(200).send({
+        "message": "Welcome to Komet"
+    })
+})
 
 const PORT = process.env.PORT;
 app.listen(PORT, () => {
