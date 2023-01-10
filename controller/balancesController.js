@@ -7,7 +7,7 @@ const initProvider = (chain) => {
     provider = new ethers.providers.JsonRpcProvider(ENDPOINTS[chain])
 }
 
-const convertToNumber = (hex, decimals = 18) => {
+const convertToNumber = (hex, decimals) => {
     if (!hex) return 0 
     return ethers.utils.formatUnits(hex, decimals)
 }
@@ -21,7 +21,6 @@ const getAllTokenBalances = async (tokenList, wallet) => {
         erc20.balanceOf(wallet)
       )
     }
-    // actually requests all balances
     const promiseResults = await Promise.allSettled(proms)
     for (let index = 0; index < promiseResults.length; index++) {
       const bal = convertToNumber(
