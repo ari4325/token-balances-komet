@@ -27,6 +27,7 @@ const getAllTokenBalances = async (tokenList, wallet) => {
         promiseResults[index].value,
         tokenList[index].decimals
       )
+      if(bal == 0) continue;
       results.push({
         name: tokenList[index].name,
         symbol: tokenList[index].symbol,
