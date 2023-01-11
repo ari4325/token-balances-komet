@@ -7,7 +7,7 @@ const ENDPOINTS = {
   Ethereum: process.env.ETH_ARCHIVE_NODE,
   Avalanche: process.env.AVA_ARCHIVE_NODE,
   Binance: process.env.BNB_ARCHIVE_NODE,
-  "80001": process.env.POLY_ARCHIVE_NODE,
+  "80001": "https://polygon-mainnet.infura.io/v3/d1ed4d59de6b4faa878a943d8553d956",
 }
 
 const TOKEN_LISTS = {
